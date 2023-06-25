@@ -20,3 +20,8 @@ Route::get('/test', function () {
 
 Route::get("pertambahan", [UserController::class,"pertambahan"]);
 Route::get("perkalian/{angka1}/{angka2}", [UserController::class,"perkalian"]);
+
+Route::get("user", [UserController::class, "indexUser"]);
+Route::get("user/edit/{userId}", [UserController::class, "editUser"])->name("edit.user");
+Route::post("user/edit/{userId}", [UserController::class, "postEditUser"])->name("edit.user.post");
+Route::get("user/delete/{userId}", [UserController::class, "deleteUser"])->name("delete.user");
